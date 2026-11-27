@@ -14,6 +14,7 @@ class WordStore(ctx: Context) {
     fun isReview(w: String) = w in review
     fun reviewList(): List<String> = review.toList()
     fun reviewCount() = review.size
+    fun knownCount() = known.size
 
     fun markKnown(w: String) { known.add(w); review.remove(w); save() }
     fun markReview(w: String) { review.add(w); known.remove(w); save() }
